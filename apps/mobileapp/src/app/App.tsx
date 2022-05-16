@@ -11,6 +11,8 @@ import {
   Linking,
 } from 'react-native';
 
+import { Button } from '@nx-react-web-mobile/ui-mobile';
+import { authDomainServices } from '@nx-react-web-mobile/domain';
 import Checkmark from './icons/checkmark.svg';
 import Book from './icons/book.svg';
 import ChevronRight from './icons/chevron-right.svg';
@@ -28,9 +30,14 @@ export const App = () => {
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
   const scrollViewRef = useRef<null | ScrollView>(null);
 
+  React.useEffect(() => {
+    authDomainServices.performLogin({ user: '', password: '' });
+  }, []);
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
+      <Button />
       <SafeAreaView>
         <ScrollView
           ref={(ref) => {

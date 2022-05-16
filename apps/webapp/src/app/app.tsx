@@ -3,10 +3,17 @@ import styles from './app.module.css';
 import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';
+import { Ui } from '@nx-react-web-mobile/ui';
+import { authDomainServices } from '@nx-react-web-mobile/domain';
+import React from 'react';
 
+React.useEffect(() => {
+  authDomainServices.performLogin({ user: '', password: '' });
+}, []);
 export function App() {
   return (
     <>
+      <Ui />
       <NxWelcome title="webapp" />
       <div />
 
