@@ -1,7 +1,7 @@
-import { authDataServices } from '@nx-react-web-mobile/data';
+import { getToken } from '@nx-react-web-mobile/data';
 
 export default async (params: { user: string; password: string }) => {
-  const token = await authDataServices.getToken(params);
+  const token = await getToken(params);
   /**
    * TODO: Perform additional business logic here
    */

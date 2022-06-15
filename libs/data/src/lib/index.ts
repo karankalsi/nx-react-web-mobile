@@ -1,1 +1,1 @@
-export * as authDataServices from './auth';
+export * from './auth';

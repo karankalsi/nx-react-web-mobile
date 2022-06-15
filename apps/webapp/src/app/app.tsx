@@ -4,13 +4,13 @@ import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';
 import { Ui } from '@nx-react-web-mobile/ui';
-import { authDomainServices } from '@nx-react-web-mobile/domain';
+import { performLogin } from '@nx-react-web-mobile/domain';
 import React from 'react';
 
-React.useEffect(() => {
-  authDomainServices.performLogin({ user: '', password: '' });
-}, []);
 export function App() {
+  React.useEffect(() => {
+    performLogin({ user: '', password: '' });
+  }, []);
   return (
     <>
       <Ui />

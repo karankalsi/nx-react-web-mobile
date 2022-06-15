@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 import { Button } from '@nx-react-web-mobile/ui-mobile';
-import { authDomainServices } from '@nx-react-web-mobile/domain';
+import { performLogin } from '@nx-react-web-mobile/domain';
 import Checkmark from './icons/checkmark.svg';
 import Book from './icons/book.svg';
 import ChevronRight from './icons/chevron-right.svg';
@@ -31,7 +31,7 @@ export const App = () => {
   const scrollViewRef = useRef<null | ScrollView>(null);
 
   React.useEffect(() => {
-    authDomainServices.performLogin({ user: '', password: '' });
+    performLogin({ user: '', password: '' });
   }, []);
 
   return (
