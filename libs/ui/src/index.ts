@@ -1,1 +1,2 @@
-export * from './lib/ui';
+export { default as Button } from './Button';
+export * from './Button';

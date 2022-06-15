@@ -1,1 +1,58 @@
 /* Your styles goes here. */
+body {
+    background-color: #505050;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    padding: 24px;
+    background-color: rgb(55, 55, 55);
+    border: 3px solid rgb(61, 61, 61);
+}
+
+.loginAvatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.loginInputBox {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex: 1;
+}
+
+.loginButton {
+    margin-top: 24px;
+}
+
+label {
+    color: #ffffff;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+
+input {
+    font-size: 16;
+    padding: 12px 8px 12px 8px;
+    border: 1px solid transparent;
+}
+
+input:focus {
+    outline: none !important;
+    border: 1px solid #04AA6D;
+    box-shadow: 0 0 5px #e1ffe1;
+}
