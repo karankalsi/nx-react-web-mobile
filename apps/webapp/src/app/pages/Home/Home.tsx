@@ -4,21 +4,21 @@ import React from 'react';
 import styles from './Home.module.scss';
 
 const Home: React.FC = () => {
-    const [planets] = usePlanets();
-    const rows: [Planet[]] = [...planets, ...planets].reduce(
-      (acc, item, index) => {
-        const rowIndex = Math.floor(index / 5);
-        acc[rowIndex] = acc[rowIndex] ? acc[rowIndex] : [];
-        acc[rowIndex].push(item);
-        return acc;
-      },
-      [[]] as [Planet[]]
-    );
+  const [planets] = usePlanets();
+  const rows: [Planet[]] = planets.reduce(
+    (acc, item, index) => {
+      const rowIndex = Math.floor(index / 5);
+      acc[rowIndex] = acc[rowIndex] ? acc[rowIndex] : [];
+      acc[rowIndex].push(item);
+      return acc;
+    },
+    [[]] as [Planet[]]
+  );
   return (
     <div className={styles['container']}>
-      {rows.map((row) => {
+      {rows.map((row, ri) => {
         return (
-          <div className={styles['planetRow']}>
+          <div key={`planet_row_${ri}`} className={styles['planetRow']}>
             {row.map((it) => (
               <PlanetItem key={it.name} planet={it} />
             ))}
@@ -39,7 +39,7 @@ export const PlanetItem: React.FC<{ planet: Planet }> = ({ planet }) => {
         className={styles['planetItemImage']}
         src={Images.planets[planetImageRes]}
       />
-      <text className={styles['planetItemName']}>{planet.name}</text>
+      <div className={styles['planetItemName']}>{planet.name}</div>
     </div>
   );
 };

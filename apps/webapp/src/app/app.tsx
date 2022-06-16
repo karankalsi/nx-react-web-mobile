@@ -1,18 +1,12 @@
 import React from 'react';
-import { useNavigate, Routes, Route } from 'react-router-dom';
-import { LoginPage, HomePage } from './pages';
+import { useNavigate } from 'react-router-dom';
 
 export function App() {
   const navigate = useNavigate();
   React.useEffect(() => {
     navigate('/login');
   }, []);
-  return (
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/home" element={<HomePage />} />
-    </Routes>
-  );
+  return null;
 }
 
 export default App;
