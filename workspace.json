@@ -8,6 +8,7 @@
     "mobileapp-e2e": "apps/mobileapp-e2e",
     "ui": "libs/ui",
     "ui-mobile": "libs/ui-mobile",
+    "ui-token": "libs/ui-token",
     "webapp": "apps/webapp",
     "webapp-e2e": "apps/webapp-e2e"
   }
