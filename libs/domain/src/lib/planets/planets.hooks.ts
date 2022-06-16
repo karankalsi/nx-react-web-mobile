@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  getPlanets,
-  GetPlanetsResponseDTO,
-} from '@nx-react-web-mobile/data';
+import { getPlanets, GetPlanetsResponseDTO } from '@nx-react-web-mobile/data';
 import {
   Planet,
   UsePlanetsAction,
@@ -17,6 +14,7 @@ export const usePlanets = (): UsePlanetsAction => {
   const planets: Planet[] = results.map((it) => ({ ...it }));
 
   const load = React.useRef((pg: number) => {
+    setLoading(true);
     getPlanets(pg)
       .then((nd) => {
         setPage(pg);
@@ -42,7 +40,7 @@ export const usePlanets = (): UsePlanetsAction => {
       hasNext: !!next,
       loading,
     }),
-    [count, next]
+    [count, next, loading]
   );
 
   React.useEffect(() => {

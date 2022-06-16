@@ -1,21 +1,40 @@
 import React from 'react';
-import { FlatList, ListRenderItem, Text, View } from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  Image,
+  ListRenderItem,
+  Text,
+  View,
+} from 'react-native';
 import { usePlanets } from '@nx-react-web-mobile/domain';
 import { Planet } from 'libs/domain/src/lib/planets/planets.types';
 import HomeStyles from './Home.styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { PLANETS_COLUMN } from './Home.constants';
+import { Spinner } from '@nx-react-web-mobile/ui-mobile';
+import { planetImages } from '../../images';
 
 const Home: React.FC = () => {
-  const [planets, loadNext] = usePlanets();
+  const [planets, loadNext, extraData] = usePlanets();
+  const { loading } = extraData;
+  console.log(
+    'Home',
+    planets.map((it) => it.name)
+  );
   return (
     <SafeAreaView style={HomeStyles.container}>
       <FlatList
+        contentContainerStyle={HomeStyles.contentContainer}
         data={planets}
         numColumns={PLANETS_COLUMN}
         renderItem={renderPlanetItem}
         showsVerticalScrollIndicator={false}
         onEndReached={loadNext}
+        ListEmptyComponent={() => <PlanetListPlaceholder loading={loading} />}
+        ListFooterComponent={() => (
+          <PlanetListFooter loading={loading} data={planets} />
+        )}
       />
     </SafeAreaView>
   );
@@ -26,11 +45,47 @@ const renderPlanetItem: ListRenderItem<Planet> = ({ item }) => {
 };
 
 const PlanetItem: React.FC<{ planet: Planet }> = React.memo(({ planet }) => {
+  const planetImageRes = planet.name.toLowerCase().replace(/\s+/g, '_');
+
   return (
     <View style={HomeStyles.planetItem}>
-      <Text>{planet.name}</Text>
+      <View style={HomeStyles.planetItemImageContainer}>
+        <Image
+          style={HomeStyles.planetItemImage}
+          source={planetImages[planetImageRes]}
+          resizeMode={'contain'}
+        />
+      </View>
+      <Text style={HomeStyles.planetItemName}>{planet.name}</Text>
     </View>
   );
 });
+
+const PlanetListPlaceholder: React.FC<{ loading: boolean }> = React.memo(
+  ({ loading }) => {
+    if (loading) {
+      return <Spinner fullScreenOverlay />;
+    } else {
+      return (
+        <View style={HomeStyles.emptyListPlaceholder}>
+          <Text style={HomeStyles.emptyListText}>No data found</Text>
+        </View>
+      );
+    }
+  }
+);
+
+const PlanetListFooter: React.FC<{ loading: boolean; data: Planet[] }> =
+  React.memo(({ loading, data }) => {
+    if (loading && data.length) {
+      return (
+        <View style={HomeStyles.spinnerFooter}>
+          <Spinner />
+        </View>
+      );
+    }
+
+    return null;
+  });
 
 export default Home;
