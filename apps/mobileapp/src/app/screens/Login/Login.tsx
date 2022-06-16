@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@nx-react-web-mobile/ui-mobile';
-import { Svg } from '@nx-react-web-mobile/ui-res';
+import { Svgs } from '@nx-react-web-mobile/ui-res';
 import { Text, TextInput, View } from 'react-native';
 import LoginStyles from './Login.styles';
 import { useAppNavigation } from '../../lib/navigation';
@@ -13,7 +13,7 @@ const Login: React.FC = () => {
   return (
     <View style={LoginStyles.container}>
       <View style={LoginStyles.loginForm}>
-        <Svg.UserAvatar style={LoginStyles.userAvatar} />
+        <Svgs.UserAvatar style={LoginStyles.userAvatar} />
         <View style={LoginStyles.formField}>
           <Text style={LoginStyles.label}>Username</Text>
           <TextInput style={LoginStyles.formFieldInput} />

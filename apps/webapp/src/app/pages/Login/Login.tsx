@@ -1,7 +1,7 @@
 import { Button } from '@nx-react-web-mobile/ui';
 import { performLogin } from '@nx-react-web-mobile/domain';
 import React from 'react';
-import { Svg } from '@nx-react-web-mobile/ui-res';
+import { Svgs } from '@nx-react-web-mobile/ui-res';
 import { Navigate } from 'react-router-dom';
 import styles from './Login.module.scss';
 
@@ -15,9 +15,8 @@ export function App() {
     <>
       {loggedIn && <Navigate to="/home" replace={true} />}
       <div className={styles['container']}>
-        {/* <Button>Hello</Button> */}'
         <div className={styles['loginForm']}>
-          <img className={styles['loginAvatar']} src={Svg.UserAvatar} />
+          <img className={styles['loginAvatar']} src={Svgs.UserAvatar} />
           <div className={styles['loginInputBox']}>
             <label>Username</label>
             <input></input>

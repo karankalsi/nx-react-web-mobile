@@ -13,7 +13,7 @@ import HomeStyles from './Home.styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { PLANETS_COLUMN } from './Home.constants';
 import { Spinner } from '@nx-react-web-mobile/ui-mobile';
-import { planetImages } from '../../images';
+import { Images } from '@nx-react-web-mobile/ui-res';
 
 const Home: React.FC = () => {
   const [planets, loadNext, extraData] = usePlanets();
@@ -52,7 +52,7 @@ const PlanetItem: React.FC<{ planet: Planet }> = React.memo(({ planet }) => {
       <View style={HomeStyles.planetItemImageContainer}>
         <Image
           style={HomeStyles.planetItemImage}
-          source={planetImages[planetImageRes]}
+          source={Images.planets[planetImageRes]}
           resizeMode={'contain'}
         />
       </View>
