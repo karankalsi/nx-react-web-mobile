@@ -1,0 +1,37 @@
+@import "../../../../../../libs/ui-token/src/Colors/Colors.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $BLACK;
+}
+
+.planetRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.planetItem {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 22vw;
+    padding: 24px 0px 24px 0px;
+    border: solid 1px $GREY5;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.planetItemImage {
+    display: block;
+    width: 70%;
+    height: max-content;
+}
+
+.planetItemName {
+    color: $WHITE;
+    font-size: 24px;
+}

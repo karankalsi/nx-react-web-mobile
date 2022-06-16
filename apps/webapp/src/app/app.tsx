@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate, Routes, Route } from 'react-router-dom';
-import { LoginPage } from './pages';
-import Login from './pages/Login';
+import { LoginPage, HomePage } from './pages';
 
 export function App() {
   const navigate = useNavigate();
@@ -10,7 +9,8 @@ export function App() {
   }, []);
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/home" element={<HomePage />} />
     </Routes>
   );
 }
