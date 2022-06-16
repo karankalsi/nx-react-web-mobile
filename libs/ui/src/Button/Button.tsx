@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonProps } from './Button.types';
-import styles from './Button.module.css';
+import styles from './Button.module.scss';
 
 export const Button: React.FunctionComponent<ButtonProps> = (props) => {
   const buttonStyle = [styles['appButton']];

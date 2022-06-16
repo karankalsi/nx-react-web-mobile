@@ -1,11 +1,16 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
+import ButtonStyles from './Button.styles';
+import { ButtonProps } from './Button.types';
 
-/**
- * TODO: Re-write below component.
- */
-const Button: React.FC<{ title?: string }> = ({ title }) => {
-  return <TouchableOpacity>{title}</TouchableOpacity>;
+const Button: React.FC<ButtonProps> = (props) => {
+  return (
+    <TouchableOpacity style={[ButtonStyles.container, props.style]}>
+      <Text style={ButtonStyles.content}>
+      {props.children}
+      </Text>
+    </TouchableOpacity>
+  );
 };
 
 export default Button;

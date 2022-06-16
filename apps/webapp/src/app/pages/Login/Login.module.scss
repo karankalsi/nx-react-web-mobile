@@ -1,6 +1,7 @@
-/* Your styles goes here. */
+@import "../../../../../../libs/ui-token/src/Colors/Colors.scss";
+
 body {
-    background-color: #505050;
+    background-color: $GREY4;
 }
 
 .container {
@@ -16,10 +17,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    width: 400px;
     padding: 24px;
-    background-color: rgb(55, 55, 55);
-    border: 3px solid rgb(61, 61, 61);
+    background-color: $GREY5;
+    border: 3px solid $GREY4;
 }
 
 .loginAvatar {
@@ -39,7 +40,7 @@ body {
 }
 
 label {
-    color: #ffffff;
+    color: $WHITE;
     margin-top: 24px;
     margin-bottom: 12px;
 }
@@ -53,6 +54,6 @@ input {
 
 input:focus {
     outline: none !important;
-    border: 1px solid #04AA6D;
-    box-shadow: 0 0 5px #e1ffe1;
+    border: 1px solid $BLACK;
+    box-shadow: 0 0 5px $YELLOW;
 }

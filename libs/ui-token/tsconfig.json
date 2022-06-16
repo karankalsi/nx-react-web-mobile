@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
-  "files": [],
+  "files": ["../../node_modules/@nrwl/react-native/typings/svg.d.ts"],
   "include": [],
   "references": [
     {
