@@ -9,7 +9,7 @@
   },
   "private": true,
   "dependencies": {
-    "@nrwl/node": "^14.3.5",
+    "axios": "0.27.2",
     "core-js": "^3.6.5",
     "react": "18.1.0",
     "react-dom": "18.1.0",
@@ -25,6 +25,7 @@
     "@nrwl/eslint-plugin-nx": "14.1.5",
     "@nrwl/jest": "14.1.5",
     "@nrwl/linter": "14.1.5",
+    "@nrwl/node": "14.1.5",
     "@nrwl/react": "14.1.5",
     "@nrwl/react-native": "14.1.5",
     "@nrwl/web": "14.1.5",
