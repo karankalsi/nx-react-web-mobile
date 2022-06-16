@@ -1,7 +1,7 @@
 import { Button } from '@nx-react-web-mobile/ui';
 import { performLogin } from '@nx-react-web-mobile/domain';
 import React from 'react';
-import { Images } from '@nx-react-web-mobile/ui-token';
+import { Svg } from '@nx-react-web-mobile/ui-token';
 import { Navigate } from 'react-router-dom';
 import styles from './Login.module.scss';
 
@@ -17,7 +17,7 @@ export function App() {
       <div className={styles['container']}>
         {/* <Button>Hello</Button> */}'
         <div className={styles['loginForm']}>
-          <img className={styles['loginAvatar']} src={Images.UserAvatar} />
+          <img className={styles['loginAvatar']} src={Svg.UserAvatar} />
           <div className={styles['loginInputBox']}>
             <label>Username</label>
             <input></input>
