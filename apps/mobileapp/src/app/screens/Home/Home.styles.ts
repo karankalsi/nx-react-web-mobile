@@ -1,4 +1,4 @@
-import { Colors } from '@nx-react-web-mobile/ui-token';
+import { Colors } from '@nx-react-web-mobile/ui-res';
 import { StyleSheet, Dimensions } from 'react-native';
 import { PLANETS_COLUMN } from './Home.constants';
 

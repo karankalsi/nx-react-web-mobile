@@ -1,4 +1,4 @@
-import { Colors } from '@nx-react-web-mobile/ui-token';
+import { Colors } from '@nx-react-web-mobile/ui-res';
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import SpinnerStyles from './Spinner.styles';

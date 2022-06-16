@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@nx-react-web-mobile/ui-mobile';
-import { Svg } from '@nx-react-web-mobile/ui-token';
+import { Svg } from '@nx-react-web-mobile/ui-res';
 import { Text, TextInput, View } from 'react-native';
 import LoginStyles from './Login.styles';
 import { useAppNavigation } from '../../lib/navigation';

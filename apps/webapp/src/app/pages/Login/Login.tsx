@@ -1,7 +1,7 @@
 import { Button } from '@nx-react-web-mobile/ui';
 import { performLogin } from '@nx-react-web-mobile/domain';
 import React from 'react';
-import { Svg } from '@nx-react-web-mobile/ui-token';
+import { Svg } from '@nx-react-web-mobile/ui-res';
 import { Navigate } from 'react-router-dom';
 import styles from './Login.module.scss';
 

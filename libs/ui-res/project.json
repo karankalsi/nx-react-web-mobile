@@ -1,20 +1,20 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/ui-token/src",
+  "sourceRoot": "libs/ui-res/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/ui-token/**/*.ts"]
+        "lintFilePatterns": ["libs/ui-res/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/ui-token"],
+      "outputs": ["coverage/libs/ui-res"],
       "options": {
-        "jestConfig": "libs/ui-token/jest.config.ts",
+        "jestConfig": "libs/ui-res/jest.config.ts",
         "passWithNoTests": true
       }
     }

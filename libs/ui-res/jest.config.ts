@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'ui-token',
+  displayName: 'ui-res',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -12,5 +12,5 @@ export default {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/ui-token',
+  coverageDirectory: '../../coverage/libs/ui-res',
 };

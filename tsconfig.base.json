@@ -19,7 +19,7 @@
       "@nx-react-web-mobile/domain": ["libs/domain/src/index.ts"],
       "@nx-react-web-mobile/ui": ["libs/ui/src/index.ts"],
       "@nx-react-web-mobile/ui-mobile": ["libs/ui-mobile/src/index.ts"],
-      "@nx-react-web-mobile/ui-token": ["libs/ui-token/src/index.ts"]
+      "@nx-react-web-mobile/ui-res": ["libs/ui-res/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
