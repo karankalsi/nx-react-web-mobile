@@ -13,31 +13,15 @@
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
+    transition: opacity 0.1s;
 }
 
 .appButton:hover {
     opacity: 0.8;
 }
 
-.appButton:after {
-    content: "";
-    background: $YELLOW_ACCENT;
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -32px !important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-}
-
-.appButton:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
+.appButton:active {
+    opacity: 0.5;
 }
 
 .fluid {
