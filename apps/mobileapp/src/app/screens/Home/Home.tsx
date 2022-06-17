@@ -1,19 +1,18 @@
 import React from 'react';
 import {
-  ActivityIndicator,
   FlatList,
   Image,
   ListRenderItem,
   Text,
   View,
 } from 'react-native';
+import { Spinner } from '@nx-react-web-mobile/ui-mobile';
+import { Images } from '@nx-react-web-mobile/ui-res';
 import { usePlanets } from '@nx-react-web-mobile/domain';
 import { Planet } from 'libs/domain/src/lib/planets/planets.types';
 import HomeStyles from './Home.styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { PLANETS_COLUMN } from './Home.constants';
-import { Spinner } from '@nx-react-web-mobile/ui-mobile';
-import { Images } from '@nx-react-web-mobile/ui-res';
 
 const Home: React.FC = () => {
   const {planets, loadNext, extraData} = usePlanets();
