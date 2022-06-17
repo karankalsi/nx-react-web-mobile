@@ -9,4 +9,5 @@ export interface UseLoginAction {
   handleUsernameChange: (value: string) => void;
   handlePasswordChange: (value: string) => void;
   handleSubmit: () => Promise<void>;
+  ready: boolean;
 }

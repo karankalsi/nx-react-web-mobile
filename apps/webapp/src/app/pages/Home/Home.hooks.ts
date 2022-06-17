@@ -1,9 +1,9 @@
-import { Planet } from '@nx-react-web-mobile/domain';
+import { Planet, UsePlanetsAction } from '@nx-react-web-mobile/domain';
 import React from 'react';
 
-export const useListPagination = (params: {
-  loadNext: () => void;
-}): React.RefObject<HTMLDivElement> => {
+export const useListPagination = (
+  params: Pick<UsePlanetsAction, 'loadNext' | 'extraData'>
+): React.RefObject<HTMLDivElement> => {
   const { loadNext } = params;
   const listRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {

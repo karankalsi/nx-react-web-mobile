@@ -8,9 +8,14 @@ export const Button: React.FunctionComponent<ButtonProps> = (props) => {
     buttonStyle.push(styles['fluid']);
   }
 
+  if (props.isDisabled) {
+    buttonStyle.push(styles['disabled']);
+  }
+
   if (props.className) {
     buttonStyle.push(props.className);
   }
+
   return (
     <button className={buttonStyle.join(' ')} onClick={props.onClick}>
       {props.children}
@@ -20,6 +25,7 @@ export const Button: React.FunctionComponent<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   isFluid: false,
+  isDisabled: false
 };
 
 export default Button;

@@ -21,8 +21,9 @@ export interface UsePlanetsActionExtraData {
   loading: boolean;
 }
 
-export type UsePlanetsAction = [
+export interface UsePlanetsAction {
   planets: Planet[],
   loadNext: () => void,
   extraData: UsePlanetsActionExtraData
-];
+}
+

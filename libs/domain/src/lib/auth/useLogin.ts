@@ -34,11 +34,14 @@ export default (params: UseLoginParams): UseLoginAction => {
     }
   }, [username, password]);
 
+  const ready = !!(username && password);
+
   return {
     username,
     password,
     handleUsernameChange,
     handlePasswordChange,
     handleSubmit,
+    ready
   };
 };

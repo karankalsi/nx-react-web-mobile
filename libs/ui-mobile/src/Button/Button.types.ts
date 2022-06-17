@@ -5,4 +5,5 @@ export interface ButtonProps {
     children: React.ReactNode;
     style?: StyleProp<ViewStyle>;
     onClick: () => void;
+    isDisabled?: boolean;
 }

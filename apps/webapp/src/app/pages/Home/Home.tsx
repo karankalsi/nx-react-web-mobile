@@ -5,9 +5,9 @@ import { useListPagination, usePlanetRows } from './Home.hooks';
 import styles from './Home.module.scss';
 
 const Home: React.FC = () => {
-  const [planets, loadNext] = usePlanets();
+  const { planets, loadNext, extraData} = usePlanets();
 
-  const listRef = useListPagination({ loadNext });
+  const listRef = useListPagination({ loadNext, extraData });
 
   const rows = usePlanetRows({ planets });
 

@@ -8,6 +8,9 @@ export default StyleSheet.create({
     backgroundColor: Colors.YELLOW,
     alignItems: 'center',
   },
+  containerDisabled: {
+    backgroundColor: Colors.GREY3,
+  },
   content: {
     color: Colors.BLACK,
   },

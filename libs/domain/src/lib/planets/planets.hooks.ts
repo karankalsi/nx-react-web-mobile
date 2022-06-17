@@ -52,5 +52,5 @@ export const usePlanets = (): UsePlanetsAction => {
     };
   }, []);
 
-  return [planets, loadNext, extraData];
+  return {planets, loadNext, extraData};
 };

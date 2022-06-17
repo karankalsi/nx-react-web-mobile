@@ -12,7 +12,7 @@ export function Login() {
   }, [navigate]);
 
   const onFailure = React.useCallback(() => {
-    //TODO: Handle failure
+    //TODO: Handle login failure here
   }, []);
 
   const {
@@ -21,13 +21,8 @@ export function Login() {
     handleUsernameChange,
     handlePasswordChange,
     handleSubmit,
+    ready
   } = useLogin({ onSuccess, onFailure });
-
-  const loginButtonStyle = [styles['loginButton']];
-
-  if (!username || !password) {
-    loginButtonStyle.push(styles['loginButtonDisabled']);
-  }
 
   return (
     <>
@@ -48,9 +43,10 @@ export function Login() {
             />
           </div>
           <Button
-            className={loginButtonStyle.join(' ')}
+            className={styles['loginButton']}
             isFluid
             onClick={handleSubmit}
+            isDisabled={!ready}
           >
             Login
           </Button>
