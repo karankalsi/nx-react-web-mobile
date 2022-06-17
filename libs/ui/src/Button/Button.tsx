@@ -11,7 +11,11 @@ export const Button: React.FunctionComponent<ButtonProps> = (props) => {
   if (props.className) {
     buttonStyle.push(props.className);
   }
-  return <button className={buttonStyle.join(' ')}>{props.children}</button>;
+  return (
+    <button className={buttonStyle.join(' ')} onClick={props.onClick}>
+      {props.children}
+    </button>
+  );
 };
 
 Button.defaultProps = {

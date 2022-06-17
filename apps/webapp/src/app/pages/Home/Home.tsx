@@ -1,21 +1,18 @@
 import { Planet, usePlanets } from '@nx-react-web-mobile/domain';
 import { Images } from '@nx-react-web-mobile/ui-res';
 import React from 'react';
+import { useListPagination, usePlanetRows } from './Home.hooks';
 import styles from './Home.module.scss';
 
 const Home: React.FC = () => {
-  const [planets] = usePlanets();
-  const rows: [Planet[]] = planets.reduce(
-    (acc, item, index) => {
-      const rowIndex = Math.floor(index / 5);
-      acc[rowIndex] = acc[rowIndex] ? acc[rowIndex] : [];
-      acc[rowIndex].push(item);
-      return acc;
-    },
-    [[]] as [Planet[]]
-  );
+  const [planets, loadNext] = usePlanets();
+
+  const listRef = useListPagination({ loadNext });
+
+  const rows = usePlanetRows({ planets });
+
   return (
-    <div className={styles['container']}>
+    <div className={styles['container']} ref={listRef}>
       {rows.map((row, ri) => {
         return (
           <div key={`planet_row_${ri}`} className={styles['planetRow']}>
