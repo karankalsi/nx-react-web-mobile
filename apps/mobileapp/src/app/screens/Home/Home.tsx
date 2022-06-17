@@ -16,12 +16,8 @@ import { Spinner } from '@nx-react-web-mobile/ui-mobile';
 import { Images } from '@nx-react-web-mobile/ui-res';
 
 const Home: React.FC = () => {
-  const [planets, loadNext, extraData] = usePlanets();
+  const {planets, loadNext, extraData} = usePlanets();
   const { loading } = extraData;
-  console.log(
-    'Home',
-    planets.map((it) => it.name)
-  );
   return (
     <SafeAreaView style={HomeStyles.container}>
       <FlatList
