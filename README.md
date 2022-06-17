@@ -1,6 +1,8 @@
 
 
 # NxReactWebMobile
+![2022-06-17 17 10 47](https://user-images.githubusercontent.com/12719144/174291836-6f02dd39-0dcb-4fbf-bc1b-4fface9e5a8d.gif)
+
 
 This project was generated using [Nx](https://nx.dev).
 
